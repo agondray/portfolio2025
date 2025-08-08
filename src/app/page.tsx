@@ -54,7 +54,7 @@ export default function Portfolio() {
           <div className="absolute inset-0 transition-all duration-300 bg-hero-overlay" />
         </div>
 
-        <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
+        <div className="relative z-10 text-center text-white px-0 md:px-4 max-w-4xl mx-[5%] md:mx-auto">
           <h1 className="text-5xl md:text-7xl font-bold mb-6 text-shadow-[3px_3px_6px] text-shadow-black">
             Greetings, I&apos;m JV
           </h1>
@@ -81,8 +81,8 @@ export default function Portfolio() {
       <section id="about" className="py-20">
         <div className="container mx-auto max-w-4xl">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Frontend Applications Developer</h2>
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
+          <div className="grid px-0 mx-[5%] md:mx-auto md:grid-cols-2 gap-12 items-center">
+            <div className="flex justify-center">
               <Image
                 src="/linkedin_profile_pic.jpg"
                 alt="Joseph Victor Estolas - Frontend Developer"
@@ -120,7 +120,7 @@ export default function Portfolio() {
       <section id="skills" className="py-20 bg-muted/50">
         <div className="container mx-auto max-w-6xl">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Technical Skills</h2>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid px-0 mx-[5%] md:mx-auto md:grid-cols-3 gap-8">
             <Card>
               <CardHeader>
                 <Code2 className="w-8 h-8 text-custom-blue mb-2" />
@@ -184,7 +184,7 @@ export default function Portfolio() {
         </div>
       </section>
 
-      <section id="projects" className="py-20">
+      <section id="projects" className="py-20 px-0 mx-[5%] md:mx-auto">
         <div className="container mx-auto max-w-6xl">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Featured Projects</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -222,7 +222,7 @@ export default function Portfolio() {
       </section>
 
       <section id="contact" className="py-20 bg-muted/50">
-        <div className="container mx-auto max-w-4xl text-center">
+        <div className="px-0 mx-[5%] md:mx-auto max-w-4xl text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-8">Ready to build something amazing?</h2>
           <p className="text-lg text-muted-foreground mb-12">
             I&apos;m currently available for full-time opportunities, contracts, and freelance projects. Let&apos;s connect and discuss how I can help bring your software ideas to life.
