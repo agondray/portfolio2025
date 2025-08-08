@@ -6,7 +6,6 @@ import { Badge } from "@/components/ui/badge";
 import { Github, Linkedin, Mail, ExternalLink, Code2, Monitor, Zap } from 'lucide-react';
 import Image from "next/image"
 import Link from "next/link"
-import { Mystery_Quest } from "next/font/google";
 import { GITHUB_URL, LINKEDIN_URL, MY_EMAIL, projectData } from '@/lib/constants';
 import ThemeSwitch from '@/components/themeSwitch';
 import Footer from '@/components/footer';
@@ -56,10 +55,10 @@ export default function Portfolio() {
 
         <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
           <h1 className="text-5xl md:text-7xl font-bold mb-6 text-shadow-[0_2px_5px] text-shadow-black">
-            Greetings, I'm JV
+            Greetings, I&apos;m JV
           </h1>
           <p className="text-xl md:text-2xl mb-8 text-gray-200 text-shadow-[2px_2px_5px] text-shadow-black">
-            I'm a frontend applications developer who builds robust, maintainable, and scalable web applications with cutting-edge technologies.
+            I&apos;m a frontend applications developer who builds robust, maintainable, and scalable web applications with cutting-edge technologies.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" variant="outlineLight">
@@ -70,7 +69,7 @@ export default function Portfolio() {
             </Button>
             <Button size="lg" variant="outlineLight">
               <Link href="#contact" className="flex items-center gap-2 text-shadow-[0_2px_5px] text-shadow-black">
-                Let's Connect
+                Let&apos;s Connect
                 <Mail className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
               </Link>
             </Button>
@@ -93,10 +92,10 @@ export default function Portfolio() {
             </div>
             <div className="space-y-6">
               <p className="text-lg text-muted-foreground">
-                I'm a dedicated frontend developer with over nine years of experience transforming designs and ideas into interactive and user-friendly web experiences. I'm passionate about clean code, performance optimization, and creating accessible applications for all users.
+                I&apos;m a dedicated frontend developer with over nine years of experience transforming designs and ideas into interactive and user-friendly web experiences. With a passion for writing clean, testable, and maintainable code, I strive to deliver robust software that is easy to understand while adhering to a higher standard of code quality.
               </p>
               <p className="text-lg text-muted-foreground">
-                I enjoy learning about the latest frontend trends and updating my skillsets based on the current best practices. When I'm not coding, you'll find me designing and tinkering with 3D models to be 3D printed or experimenting with new JavaScript tools and  frameworks.
+                I enjoy learning about the latest frontend trends and updating my skillsets based on the current best practices. When I&apos;m not coding, you&apos;ll find me designing and tinkering with 3D models to be 3D printed or experimenting with new JavaScript tools and  frameworks.
               </p>
               <div className="flex gap-4">
                 <Button variant="outline" size="sm">
@@ -225,7 +224,7 @@ export default function Portfolio() {
         <div className="container mx-auto max-w-4xl text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-8">Ready to build something amazing?</h2>
           <p className="text-lg text-muted-foreground mb-12">
-            I'm currently available for full-time opportunities, contracts, and freelance projects. Let's connect and discuss how I can help bring your software ideas to life.
+            I&apos;m currently available for full-time opportunities, contracts, and freelance projects. Let&apos;s connect and discuss how I can help bring your software ideas to life.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" variant="outline">
