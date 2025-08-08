@@ -5,13 +5,13 @@ export const MY_EMAIL = 'josephvictorestolas@gmail.com';
 export const projectData = [
   {
     title: "Quest Log - A Kanban Board",
-    description: "Interactive task tracker with responsive design",
+    description: "Interactive task tracker, Kanban-style, with responsive design. Drag and drop those cards!",
     image: "/wip.jpg?height=300&width=400",
     tech: ["Next.js", "React", "JavaScript ES6+", "TailwindCSS", "Shadcn"],
   },
   {
     title: "TCG Online Shop",
-    description: "A mock online store for browsing purchasing cards from the Weiss Schwarz trading card game.",
+    description: "A mock online store for browsing and purchasing cards from the Weiss Schwarz trading card game.",
     image: "/wip.jpg?height=300&width=400",
     tech: ["Next.js", "React", "JavaScript ES6+", "TailwindCSS", "Shadcn", "React Router"],
   },

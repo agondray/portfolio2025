@@ -54,21 +54,21 @@ export default function Portfolio() {
         </div>
 
         <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 text-shadow-[0_2px_5px] text-shadow-black">
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 text-shadow-[3px_3px_6px] text-shadow-black">
             Greetings, I&apos;m JV
           </h1>
-          <p className="text-xl md:text-2xl mb-8 text-gray-200 text-shadow-[2px_2px_5px] text-shadow-black">
+          <p className="text-xl md:text-2xl mb-8 text-gray-200 text-shadow-[3px_3px_6px] text-shadow-black">
             I&apos;m a frontend applications developer who builds robust, maintainable, and scalable web applications with cutting-edge technologies.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" variant="outlineLight">
-              <Link href="#projects" className="flex items-center gap-2 text-shadow-[0_2px_5px] text-shadow-black">
+              <Link href="#projects" className="flex items-center gap-2 text-shadow-[3px_3px_6px] text-shadow-black">
                 Explore My Work
                 <Code2 className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
               </Link>
             </Button>
             <Button size="lg" variant="outlineLight">
-              <Link href="#contact" className="flex items-center gap-2 text-shadow-[0_2px_5px] text-shadow-black">
+              <Link href="#contact" className="flex items-center gap-2 text-shadow-[3px_3px_6px] text-shadow-black">
                 Let&apos;s Connect
                 <Mail className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
               </Link>
