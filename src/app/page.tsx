@@ -16,10 +16,11 @@ export default function Portfolio() {
       <nav className="fixed top-0 w-full bg-background backdrop-blur-md border-b z-50">
         <div className="container mx-auto px-4 py-4">
           <div className="flex justify-between items-center">
-            <h1 className="text-xl font-bold">
-              <Link href="#hero" className="text-sm hover:text-primary hover:scale-105">Joseph Victor Estolas
-              </Link>
-            </h1>
+            <Link href="#hero" className="text-sm hover:text-primary hover:scale-105">
+              <h1 className="text-xl font-bold">
+                Joseph Victor Estolas
+              </h1>
+            </Link>
             <div className="flex items-center gap-6">
               <div className="hidden md:flex space-x-6">
                 <Link href="#about" className="text-sm hover:text-primary hover:scale-105">
