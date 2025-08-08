@@ -4,7 +4,7 @@ const Footer = () => (
       <p className="text-muted-foreground">
         © {new Date().getFullYear()} Joseph Victor Estolas
       </p>
-      <p>Built with Next.js, Tailwind CSS, Shadcn, and RadixUI</p>
+      <p>Built with Next.js, Tailwind CSS, and RadixUI</p>
     </div>
   </footer>
 );

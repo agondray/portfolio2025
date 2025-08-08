@@ -58,6 +58,7 @@
   --switch-hover: var(--accent-foreground)
   --text-shadow-light: 0px 2px 5px var(dark-gray);
   --color-hero-overlay: var(--hero-overlay-bg);
+  --kanban-category-max-h: calc(100vh - 14rem);
 }
 
 :root {
@@ -118,59 +119,62 @@
   
   body {
     @apply bg-background text-foreground;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: background-color 0.4s ease, color 0.4s ease;
+
+    &:has(.disable-body-overflow-y) {
+      overflow-y: hidden;
+    }
+
+    &:has(.disable-body-overflow-x) {
+      overflow-x: hidden;
+    }
   }
 
   nav {
-    transition: background-color 0.3s ease, border-color 0.3s ease, backdrop-filter 0.3s ease;
+    transition: background-color 0.4s ease, border-color 0.4s ease, backdrop-filter 0.4s ease;
   }
 
   .card {
-    transition: background-color 0.3s ease, 
-                border-color 0.3s ease, 
-                box-shadow 0.3s ease,
-                transform 0.2s ease;
+    transition: background-color 0.4s ease, 
+                border-color 0.4s ease, 
+                box-shadow 0.4s ease,
+                transform 0.15s ease;
   }
 
   button {
-    transition: background-color 0.3s ease, 
-                color 0.3s ease, 
-                border-color 0.3s ease,
-                box-shadow 0.3s ease,
-                transform 0.1s ease;
+    transition: background-color 0.4s ease, 
+                color 0.4s ease, 
+                border-color 0.4s ease,
+                box-shadow 0.4s ease,
+                transform 0.15s ease;
   }
 
   a {
-    transition: color 0.3s ease, opacity 0.3s ease;
+    transition: color 0.4s ease, opacity 0.4s ease;
   }
 
   .badge {
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: background-color 0.4s ease, color 0.4s ease;
   }
 
   svg {
-    transition: color 0.3s ease, opacity 0.3s ease;
+    transition: color 0.5s ease-in, opacity 0.5s ease-in;
   }
 }
 
 .backdrop-blur-md {
-  transition: backdrop-filter 0.3s ease;
+  transition: backdrop-filter 0.4s ease;
 }
-
-/* Custom scrollbar with theme transitions */
-/*::-webkit-scrollbar {
-  width: 8px;
-}*/
 
 ::-webkit-scrollbar-track {
   background: hsl(var(--muted));
-  transition: background-color 0.3s ease;
+  transition: background-color 0.4s ease;
 }
 
 ::-webkit-scrollbar-thumb {
   background: hsl(var(--muted-foreground));
   border-radius: 4px;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.4s ease;
 }
 
 ::-webkit-scrollbar-thumb:hover {

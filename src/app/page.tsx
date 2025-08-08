@@ -5,44 +5,17 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Github, Linkedin, Mail, ExternalLink, Code2, Monitor, Zap } from 'lucide-react';
 import Image from "next/image"
-import Link from "next/link"
+import Link from "next/link";
 import { GITHUB_URL, LINKEDIN_URL, MY_EMAIL, projectData } from '@/lib/constants';
-import ThemeSwitch from '@/components/themeSwitch';
-import Footer from '@/components/footer';
+import TopNav from '@/components/main/topnav';
+import Footer from '@/components/main/footer';
 
 export default function Portfolio() {
   return (
     <div className="min-h-screen bg-background">
-      <nav className="fixed top-0 w-full bg-background backdrop-blur-md border-b z-50">
-        <div className="container mx-auto px-4 py-4">
-          <div className="flex justify-between items-center">
-            <Link href="#hero" className="text-sm hover:text-primary hover:scale-105">
-              <h1 className="text-xl font-bold">
-                Joseph Victor Estolas
-              </h1>
-            </Link>
-            <div className="flex items-center gap-6">
-              <div className="hidden md:flex space-x-6">
-                <Link href="#about" className="text-sm hover:text-primary hover:scale-105">
-                  About 
-                </Link>
-                <Link href="#skills" className="text-sm hover:text-primary hover:scale-105">
-                  Skills
-                </Link>
-                <Link href="#projects" className="text-sm hover:text-primary hover:scale-105">
-                  Projects
-                </Link>
-                <Link href="#contact" className="text-sm hover:text-primary hover:scale-105">
-                  Contact
-                </Link>
-              </div>
-              <ThemeSwitch />
-            </div>
-          </div>
-        </div>
-      </nav>
+      <TopNav />
 
-      <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <section id="top" className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
             src="/skyline_hero.jpg?height=1080&width=1920"
@@ -188,27 +161,33 @@ export default function Portfolio() {
         <div className="container mx-auto max-w-6xl">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Featured Projects</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projectData.map((project, index) => (
+            {projectData.map(({
+              image,
+              title,
+              description,
+              tech,
+              path,
+            }, index) => (
               <Card key={index} className="group hover:shadow-lg transition-shadow">
-                <div className="relative overflow-hidden">
+                <Link href={path || '#'} className="relative overflow-hidden">
                   <Image
-                    src={project.image || "/placeholder.svg"}
-                    alt={project.title}
+                    src={image || "/placeholder.svg"}
+                    alt={title}
                     width={400}
                     height={300}
                     className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                   />
-                </div>
+                </Link>
                 <CardHeader>
                   <CardTitle className="flex items-center justify-between">
-                    {project.title}
+                    {title}
                     <ExternalLink className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
                   </CardTitle>
-                  <CardDescription>{project.description}</CardDescription>
+                  <CardDescription>{description}</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <div className="flex flex-wrap gap-2">
-                    {project.tech.map((tech) => (
+                    {tech.map((tech) => (
                       <Badge key={tech} variant="secondary">
                         {tech}
                       </Badge>

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { ThemeProvider } from '@/providers/themeProvider';
 import "./globals.css";
+import { unstable_getStaticPaths } from "next/dist/build/templates/pages";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,8 +15,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "JV Estolas | Application Developer",
-  description: "jvestolas.dev",
+  title: 'JV Estolas | Web Applications Developer',
+  description: "Portfolio Homepage",
 };
 
 export default function RootLayout({
