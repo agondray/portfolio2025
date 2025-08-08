@@ -83,7 +83,7 @@
   --ring: var(--color-navy-blue);
   --radius: 0.5rem;
   --badge-background: var(--color-light-beige);
-  --hero-overlay-bg: #8e886c25;
+  --hero-overlay-bg: #433c3350;
 }
 
 .dark {
