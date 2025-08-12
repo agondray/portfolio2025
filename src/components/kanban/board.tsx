@@ -87,8 +87,8 @@ export function Board() {
   }
 
   return (
-    <div className="flex flex-col gap-4">
-      <div className="flex items-center gap-2">
+    <div className="flex flex-col gap-4 max-w-[1600px] mx-auto">
+      <div className="flex items-center gap-2 mt-5 ml-4">
         <Button variant="ghost" size="sm" onClick={() => reset()}>
           <RotateCcw className="h-4 w-4 mr-2" />
           Reset demo data
@@ -107,17 +107,17 @@ export function Board() {
           items={columns.map((c) => c.id)}
           strategy={horizontalListSortingStrategy}
         >
-          <div
-            className="flex gap-4 overflow-x-auto overflow-y-hidden pb-2 pr-6"
+          <ol
+            className="flex list-none absolute top-[11rem] bottom-0 left-0 right-0 gap-4 overflow-x-auto overflow-y-hidden pl-[1rem]"
             aria-label="Kanban columns"
             role="list"
           >
             {columns.map((col) => (
-              <ol key={col.id} className="shrink-0">
+              <li key={col.id} className="shrink-0">
                 <ColumnView columnId={col.id} />
-              </ol>
+              </li>
             ))}
-          </div>
+          </ol>
         </SortableContext>
       </DndContext>
     </div>

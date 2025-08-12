@@ -100,9 +100,7 @@ export function ColumnView({ columnId = "" }: { columnId?: string }) {
         <SortableContext items={col.cardIds} strategy={verticalListSortingStrategy}>
           <div ref={setDroppableRef} className="flex flex-col gap-2 min-h-[20px]">
             {col.cardIds.map((id) => (
-              <li key={id}>
-                <CardItem cardId={id} columnId={col.id} />
-              </li>
+              <CardItem key={id} cardId={id} columnId={col.id} />
             ))}
           </div>
         </SortableContext>
