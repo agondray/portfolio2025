@@ -60,7 +60,7 @@ export function CardItem({ cardId = "", columnId = "" }: { cardId?: string; colu
                     onSubmit={(title, description) => updateCard(card.id, { title, description })}
                   />
                 </DropdownMenuItem>
-                <DropdownMenuItem className="text-destructive" onSelect={() => setConfirmOpen(true)}>
+                <DropdownMenuItem onSelect={() => setConfirmOpen(true)}>
                   <Trash2 className="h-4 w-4 mr-2" /> Delete
                 </DropdownMenuItem>
               </DropdownMenuContent>

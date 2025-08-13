@@ -41,8 +41,6 @@ export function ColumnView({ columnId = "" }: { columnId?: string }) {
 
   if (!col) return null
 
-  console.log('col: ', col)
-
   const style = {
     transform: CSS.Transform.toString(transform),
     transition,
@@ -52,7 +50,7 @@ export function ColumnView({ columnId = "" }: { columnId?: string }) {
     <UICard
       ref={setSortableRef}
       style={style}
-      className="bg-background border shadow-sm flex flex-col w-[320px] min-w-[320px] shrink-0 max-h-[var(--kanban-category-max-h)] overflow-y-auto py-0"
+      className="bg-background/80 border shadow-sm flex flex-col w-[320px] min-w-[320px] shrink-0 max-h-[var(--kanban-category-max-h)] overflow-y-auto py-0"
     >
       <CardHeader 
         className="flex flex-row items-center gap-2 py-3 cursor-pointer hover:bg-muted/50 transition-colors rounded-t-lg" 
@@ -73,7 +71,7 @@ export function ColumnView({ columnId = "" }: { columnId?: string }) {
               <span className="sr-only">Open column menu</span>
             </Button>
           </DropdownMenuTrigger>
-          <DropdownMenuContent align="end">
+          <DropdownMenuContent>
             <DropdownMenuLabel>Column</DropdownMenuLabel>
             <DropdownMenuSeparator />
             <DropdownMenuItem onSelect={(e) => e.preventDefault()}>
@@ -88,7 +86,6 @@ export function ColumnView({ columnId = "" }: { columnId?: string }) {
             </DropdownMenuItem>
             <DropdownMenuItem
               onSelect={() => setConfirmOpen(true)}
-              className="text-destructive"
             >
               <Trash2 className="h-4 w-4 mr-2" /> Delete column
             </DropdownMenuItem>
@@ -105,11 +102,11 @@ export function ColumnView({ columnId = "" }: { columnId?: string }) {
           </div>
         </SortableContext>
 
-        <div className="mt-3">
+        <div className="my-3">
           <AddCardDialog
             trigger={
               <Button variant="ghost" size="sm" className="w-full justify-start">
-                <Plus className="h-4 w-4 mr-2" />
+                <Plus className="h-4 w-4" />
                 Add card
               </Button>
             }

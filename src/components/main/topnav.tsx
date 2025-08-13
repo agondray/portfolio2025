@@ -4,7 +4,7 @@ import ThemeSwitch from '@/components/ui/themeSwitch';
 
 const TopNav = ({ hideAnchors = false, linkToMain = false }: { hideAnchors: boolean, linkToMain: boolean }) => (
 	<nav className="fixed top-0 max-h-[60px] w-full bg-background backdrop-blur-md border-b z-50">
-    <div className="container mx-auto px-4 py-4">
+    <div className="mx-auto px-4 py-4">
       <div className="flex justify-between items-center">
         <Link href={linkToMain ? '/' : '#top'} className="flex justify-between text-sm hover:text-primary/80">
         	<User className="w-8 mr-2"/>
