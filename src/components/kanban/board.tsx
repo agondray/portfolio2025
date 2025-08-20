@@ -11,7 +11,6 @@ import {
   closestCorners,
   DragOverlay,
   defaultDropAnimationSideEffects,
-  pointerWithin,
   type DragOverEvent,
   type DragEndEvent,
   type DragStartEvent,
@@ -24,8 +23,7 @@ import {
 } from "@dnd-kit/sortable"
 import { useKanbanStore } from "@/lib/kanban-store"
 import { ColumnView } from "./column"
-import { Button } from "@/components/ui/button"
-import { ScrollArea, Scrollbar } from '@/components/ui/scroll-area'
+import { ScrollArea } from '@/components/ui/scroll-area'
 import { ScrollBar } from '../ui/scroll-area';
 import { CardItem } from './card-item';
 
@@ -75,9 +73,9 @@ export function Board() {
       let toColId: string | undefined
 
       if (overData?.type === 'column') {
-        toColId = (overData as any).columnId
-      } else if ((over.data.current as any)?.columnId) {
-        toColId = (over.data.current as any).columnId
+        toColId = (overData).columnId
+      } else if ((over.data.current)?.columnId) {
+        toColId = (over.data.current).columnId
       }
 
       if (toColId && toColId !== fromColId) {
@@ -146,6 +144,7 @@ export function Board() {
         collisionDetection={closestCorners}
         onDragStart={handleDragStart}
         onDragEnd={handleDragEnd}
+        onDragOver={handleDragOver}
       >
         <SortableContext
           // Column ids for horizontal sorting
@@ -174,6 +173,11 @@ export function Board() {
               {activeCard && (
                 <div className="rotate-3 opacity-95">
                   <CardItem cardId={activeCard.id} columnId="" isDragOverlay />
+                </div>
+              )}
+              {activeColumn && (
+                <div className="rotate-1 opacity-95">
+                  <ColumnView columnId={activeColumn.id} isDragOverlay />
                 </div>
               )}
             </DragOverlay>,

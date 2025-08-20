@@ -2,7 +2,6 @@
 
 import { useSortable } from "@dnd-kit/sortable"
 import { CSS } from "@dnd-kit/utilities"
-import { clsx } from 'clsx';
 import { useKanbanStore } from "@/lib/kanban-store"
 import { Card as UICard, CardContent } from "@/components/ui/card"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
