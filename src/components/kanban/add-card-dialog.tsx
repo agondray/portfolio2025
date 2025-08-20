@@ -1,8 +1,8 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
-import { Dialog, DialogContent, DialogFooter, DialogHeader, DialogTitle, DialogTrigger, DialogDescription } from "@/components/ui/dialog"
+import { Dialog, DialogClose, DialogContent, DialogFooter, DialogHeader, DialogTitle, DialogTrigger, DialogDescription } from "@/components/ui/dialog"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 
@@ -12,14 +12,17 @@ export function AddCardDialog({
   mode = "create",
   initialTitle = "",
   initialDescription = "",
+  open = false,
+  setOpen = () => false,
 }: {
   trigger?: React.ReactNode
   onSubmit?: (title: string, description?: string) => void
   mode?: "create" | "edit"
   initialTitle?: string
   initialDescription?: string
+  open?: boolean
+  setOpen?: (val: boolean) => void
 }) {
-  const [open, setOpen] = useState(false)
   const [title, setTitle] = useState(initialTitle)
   const [description, setDescription] = useState(initialDescription)
 
@@ -36,33 +39,46 @@ export function AddCardDialog({
     setOpen(false)
   }
 
+  const handleCancel = () => {
+    setTitle(initialTitle)
+    setOpen(false)
+  }
+
   return (
     <Dialog open={open} onOpenChange={(v) => setOpen(v)}>
       <DialogTrigger asChild>
-        {trigger ?? <Button size="sm">{heading}</Button>}
+        {(mode === 'create' && trigger) ?? <Button size="sm">{heading}</Button>}
       </DialogTrigger>
       <DialogContent>
         <DialogHeader>
           <DialogTitle>{heading}</DialogTitle>
           <DialogDescription>{"Provide title and optional description."}</DialogDescription>
+          <DialogClose />
         </DialogHeader>
-        <form onSubmit={handleSubmit} className="space-y-3">
+        <form
+          onSubmit={handleSubmit}
+          className="space-y-3"
+          onKeyDown={e => e.stopPropagation()}
+        >
           <Input
             value={title}
             onChange={(e) => setTitle(e.target.value)}
             placeholder="Card title"
             aria-label="Card title"
-            autoFocus
+            type="text"
+            maxLength={40}
           />
           <Textarea
+            className="resize-none"
             value={description}
             onChange={(e) => setDescription(e.target.value)}
             placeholder="Description (optional)"
             aria-label="Card description"
             rows={4}
+            maxLength={100}
           />
           <DialogFooter>
-            <Button type="button" variant="outline" onClick={() => setOpen(false)}>
+            <Button type="button" variant="outline" onClick={handleCancel}>
               Cancel
             </Button>
             <Button type="submit">{mode === "create" ? "Add" : "Save"}</Button>
