@@ -65,10 +65,10 @@ export default function Portfolio() {
               />
             </div>
             <div className="space-y-6">
-              <p className="text-lg text-muted-foreground">
+              <p className="text-lg text-foreground">
                 I&apos;m a dedicated frontend developer with over nine years of experience transforming designs and ideas into interactive and user-friendly web experiences. With a passion for writing clean, testable, and maintainable code, I strive to deliver robust software that is easy to understand while adhering to a higher standard of code quality.
               </p>
-              <p className="text-lg text-muted-foreground">
+              <p className="text-lg text-foreground">
                 I enjoy learning about the latest frontend trends and updating my skillsets based on the current best practices. When I&apos;m not coding, you&apos;ll find me designing and tinkering with 3D models to be 3D printed or experimenting with new JavaScript tools and  frameworks.
               </p>
               <div className="flex gap-4">
@@ -203,7 +203,7 @@ export default function Portfolio() {
       <section id="contact" className="py-20 bg-muted/50">
         <div className="px-0 mx-[5%] md:mx-auto max-w-4xl text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-8">Ready to build something amazing?</h2>
-          <p className="text-lg text-muted-foreground mb-12">
+          <p className="text-lg text-foreground mb-12">
             I&apos;m currently available for full-time opportunities, contracts, and freelance projects. Let&apos;s connect and discuss how I can help bring your software ideas to life.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
