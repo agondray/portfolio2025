@@ -12,7 +12,7 @@ import Footer from '@/components/main/footer';
 
 export default function Portfolio() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background select-none">
       <TopNav />
 
       <section id="top" className="relative min-h-screen flex items-center justify-center overflow-hidden">
