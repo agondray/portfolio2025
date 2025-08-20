@@ -7,7 +7,7 @@ export const projectData = [
     title: "Quest Log - A Kanban Board",
     description: "Interactive Kanban-style task tracker for organizing and managing tasks. Drag and drop those cards!",
     image: "/quest-log-thumb.jpg",
-    tech: ["Next.js", "React", "JavaScript ES6+", "TailwindCSS", "RadixUI"],
+    tech: ["Next.js", "React", "JavaScript ES6+", "TailwindCSS", "RadixUI", "dnd-kit"],
     path: '/quest-log',
   },
   {
