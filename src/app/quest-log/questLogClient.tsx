@@ -10,7 +10,7 @@ import { RotateCcw } from 'lucide-react'
 export default function QuestLogClient() {
   const { addColumn, reset } = useKanbanStore()
   return (
-    <main className="disable-body-overflow-x disable-body-overflow-y mt-[60px] bg-muted/40">
+    <main className="disable-body-overflow-x disable-body-overflow-y mt-[60px] bg-muted/40 select-none">
       <header className="fixed w-full h-[55px] top-[60px] z-10 bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b">
         <div className="mx-auto px-4 py-3 flex items-center gap-3">
           <h1 className="text-l md:text-xl font-semibold">Quest Log</h1>
