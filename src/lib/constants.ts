@@ -5,9 +5,10 @@ export const MY_EMAIL = 'josephvictorestolas@gmail.com';
 export const projectData = [
   {
     title: "Quest Log - A Kanban Board",
-    description: "Interactive task tracker, Kanban-style, with responsive design. Drag and drop those cards!",
-    image: "/wip.jpg?height=300&width=400",
-    tech: ["Next.js", "React", "JavaScript ES6+", "TailwindCSS", "Shadcn"],
+    description: "Interactive Kanban-style task tracker for organizing and managing tasks. Drag and drop those cards!",
+    image: "/quest-log-thumb.jpg",
+    tech: ["Next.js", "React", "JavaScript ES6+", "TailwindCSS", "RadixUI"],
+    path: '/quest-log',
   },
   {
     title: "TCG Online Shop",
@@ -19,7 +20,7 @@ export const projectData = [
     title: "Boids Particles Simulation",
     description: "Particle simulation that represents how birds move in a murmuration.",
     image: "/wip.jpg?height=300&width=400",
-    tech: ["React", "JavaScript ES6+", "P5JS via @p5-wrapper/react"],
+    tech: ["Next.js", "React", "JavaScript ES6+", "P5JS via @p5-wrapper/react", "TailwindCSS", "Shadcn"],
   },
   // Video Library With Custom Video Player
   // 2D Top-Down Turn-Based RPG via Canvas

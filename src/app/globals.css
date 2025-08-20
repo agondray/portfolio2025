@@ -17,6 +17,10 @@
   --color-black: #000000;
   --color-black-t25: #00000025;
   --color-black-t50: #00000050;
+  --color-sky-blue: #84C2D1;
+  --color-caribbean-green: #5DCFAC;
+  --color-dark-indigo: #404073;
+  --color-warning-red: #ca2a30;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
@@ -58,6 +62,10 @@
   --switch-hover: var(--accent-foreground)
   --text-shadow-light: 0px 2px 5px var(dark-gray);
   --color-hero-overlay: var(--hero-overlay-bg);
+  --kanban-category-max-h: calc(100vh - 14rem);
+  --color-quest-log-bg: var(--quest-log-bg);
+  --color-grad-from: var(--grad-from);
+  --color-grad-to: var(--grad-to);
 }
 
 :root {
@@ -76,7 +84,7 @@
   --muted-foreground: var(--color-navy-blue);
   --accent: var(--color-light-beige);
   --accent-foreground: var(--color-dark-gray);
-  --destructive: 0 84% 60%;
+  --destructive: var(--color-warning-red);
   --destructive-foreground: 0 0% 98%;
   --border: var(--color-light-beige);
   --input: var(--color-light-beige);
@@ -84,6 +92,8 @@
   --radius: 0.5rem;
   --badge-background: var(--color-light-beige);
   --hero-overlay-bg: #433c3350;
+  --grad-from: var(--color-sky-blue);
+  --grad-to: var(--color-caribbean-green);
 }
 
 .dark {
@@ -102,13 +112,15 @@
   --muted-foreground: var(--color-light-beige);
   --accent: var(--color-navy-blue);
   --accent-foreground: var(--color-light-beige);
-  --destructive: 0 62% 30%;
+  --destructive: var(--color-warning-red);
   --destructive-foreground: 0 0% 98%;
   --border: var(--color-navy-blue);
   --input: var(--color-navy-blue);
   --ring: var(--color-light-beige);
   --badge-background: var(--color-dark-gray);
-  --hero-overlay-bg: var(--color-navy-blue-t50)
+  --hero-overlay-bg: var(--color-navy-blue-t50);
+  --grad-from: var(--color-dark-indigo);
+  --grad-to: var(--color-black);
 }
 
 @layer base {
@@ -118,59 +130,62 @@
   
   body {
     @apply bg-background text-foreground;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: background-color 0.4s ease, color 0.4s ease;
+
+    &:has(.disable-body-overflow-y) {
+      overflow-y: hidden;
+    }
+
+    &:has(.disable-body-overflow-x) {
+      overflow-x: hidden;
+    }
   }
 
   nav {
-    transition: background-color 0.3s ease, border-color 0.3s ease, backdrop-filter 0.3s ease;
+    transition: background-color 0.4s ease, border-color 0.4s ease, backdrop-filter 0.4s ease;
   }
 
   .card {
-    transition: background-color 0.3s ease, 
-                border-color 0.3s ease, 
-                box-shadow 0.3s ease,
-                transform 0.2s ease;
+    transition: background-color 0.4s ease, 
+                border-color 0.4s ease, 
+                box-shadow 0.4s ease,
+                transform 0.15s ease;
   }
 
   button {
-    transition: background-color 0.3s ease, 
-                color 0.3s ease, 
-                border-color 0.3s ease,
-                box-shadow 0.3s ease,
-                transform 0.1s ease;
+    transition: background-color 0.4s ease, 
+                color 0.4s ease, 
+                border-color 0.4s ease,
+                box-shadow 0.4s ease,
+                transform 0.15s ease;
   }
 
   a {
-    transition: color 0.3s ease, opacity 0.3s ease;
+    transition: color 0.4s ease, opacity 0.4s ease;
   }
 
   .badge {
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: background-color 0.4s ease, color 0.4s ease;
   }
 
   svg {
-    transition: color 0.3s ease, opacity 0.3s ease;
+    transition: color 0.5s ease-in, opacity 0.5s ease-in;
   }
 }
 
 .backdrop-blur-md {
-  transition: backdrop-filter 0.3s ease;
+  transition: backdrop-filter 0.4s ease;
 }
-
-/* Custom scrollbar with theme transitions */
-/*::-webkit-scrollbar {
-  width: 8px;
-}*/
 
 ::-webkit-scrollbar-track {
   background: hsl(var(--muted));
-  transition: background-color 0.3s ease;
+  transition: background-color 0.4s ease;
 }
 
 ::-webkit-scrollbar-thumb {
   background: hsl(var(--muted-foreground));
   border-radius: 4px;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.4s ease;
 }
 
 ::-webkit-scrollbar-thumb:hover {

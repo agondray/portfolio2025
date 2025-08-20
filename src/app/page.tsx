@@ -5,44 +5,17 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Github, Linkedin, Mail, ExternalLink, Code2, Monitor, Zap } from 'lucide-react';
 import Image from "next/image"
-import Link from "next/link"
+import Link from "next/link";
 import { GITHUB_URL, LINKEDIN_URL, MY_EMAIL, projectData } from '@/lib/constants';
-import ThemeSwitch from '@/components/themeSwitch';
-import Footer from '@/components/footer';
+import TopNav from '@/components/main/topnav';
+import Footer from '@/components/main/footer';
 
 export default function Portfolio() {
   return (
     <div className="min-h-screen bg-background">
-      <nav className="fixed top-0 w-full bg-background backdrop-blur-md border-b z-50">
-        <div className="container mx-auto px-4 py-4">
-          <div className="flex justify-between items-center">
-            <Link href="#hero" className="text-sm hover:text-primary hover:scale-105">
-              <h1 className="text-xl font-bold">
-                Joseph Victor Estolas
-              </h1>
-            </Link>
-            <div className="flex items-center gap-6">
-              <div className="hidden md:flex space-x-6">
-                <Link href="#about" className="text-sm hover:text-primary hover:scale-105">
-                  About 
-                </Link>
-                <Link href="#skills" className="text-sm hover:text-primary hover:scale-105">
-                  Skills
-                </Link>
-                <Link href="#projects" className="text-sm hover:text-primary hover:scale-105">
-                  Projects
-                </Link>
-                <Link href="#contact" className="text-sm hover:text-primary hover:scale-105">
-                  Contact
-                </Link>
-              </div>
-              <ThemeSwitch />
-            </div>
-          </div>
-        </div>
-      </nav>
+      <TopNav />
 
-      <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <section id="top" className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
             src="/skyline_hero.jpg?height=1080&width=1920"
@@ -92,10 +65,10 @@ export default function Portfolio() {
               />
             </div>
             <div className="space-y-6">
-              <p className="text-lg text-muted-foreground">
+              <p className="text-lg text-foreground">
                 I&apos;m a dedicated frontend developer with over nine years of experience transforming designs and ideas into interactive and user-friendly web experiences. With a passion for writing clean, testable, and maintainable code, I strive to deliver robust software that is easy to understand while adhering to a higher standard of code quality.
               </p>
-              <p className="text-lg text-muted-foreground">
+              <p className="text-lg text-foreground">
                 I enjoy learning about the latest frontend trends and updating my skillsets based on the current best practices. When I&apos;m not coding, you&apos;ll find me designing and tinkering with 3D models to be 3D printed or experimenting with new JavaScript tools and  frameworks.
               </p>
               <div className="flex gap-4">
@@ -188,27 +161,33 @@ export default function Portfolio() {
         <div className="container mx-auto max-w-6xl">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Featured Projects</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projectData.map((project, index) => (
+            {projectData.map(({
+              image,
+              title,
+              description,
+              tech,
+              path,
+            }, index) => (
               <Card key={index} className="group hover:shadow-lg transition-shadow">
-                <div className="relative overflow-hidden">
+                <Link href={path || '#'} className="relative overflow-hidden">
                   <Image
-                    src={project.image || "/placeholder.svg"}
-                    alt={project.title}
+                    src={image || "/placeholder.svg"}
+                    alt={title}
                     width={400}
                     height={300}
                     className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                   />
-                </div>
+                </Link>
                 <CardHeader>
                   <CardTitle className="flex items-center justify-between">
-                    {project.title}
+                    {title}
                     <ExternalLink className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
                   </CardTitle>
-                  <CardDescription>{project.description}</CardDescription>
+                  <CardDescription>{description}</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <div className="flex flex-wrap gap-2">
-                    {project.tech.map((tech) => (
+                    {tech.map((tech) => (
                       <Badge key={tech} variant="secondary">
                         {tech}
                       </Badge>
@@ -224,7 +203,7 @@ export default function Portfolio() {
       <section id="contact" className="py-20 bg-muted/50">
         <div className="px-0 mx-[5%] md:mx-auto max-w-4xl text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-8">Ready to build something amazing?</h2>
-          <p className="text-lg text-muted-foreground mb-12">
+          <p className="text-lg text-foreground mb-12">
             I&apos;m currently available for full-time opportunities, contracts, and freelance projects. Let&apos;s connect and discuss how I can help bring your software ideas to life.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
