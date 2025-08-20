@@ -62,7 +62,7 @@ function seed(): Pick<BoardState, "columns" | "cards"> {
 
 export const useKanbanStore = create<BoardState>()(
   persist(
-    (set, get) => ({
+    (set) => ({
       ...seed(),
       addColumn: (title) => {
         const id = uid("col")

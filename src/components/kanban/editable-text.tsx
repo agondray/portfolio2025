@@ -30,11 +30,6 @@ export function EditableText({
     setEditing(false)
   }
 
-  function cancel() {
-    setDraft(value)
-    setEditing(false)
-  }
-
   if (editing) {
     return (
       <form

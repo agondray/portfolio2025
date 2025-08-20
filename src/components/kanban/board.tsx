@@ -3,13 +3,11 @@
 import {
   DndContext,
   DragEndEvent,
-  DragStartEvent,
   PointerSensor,
   useSensor,
   useSensors,
   KeyboardSensor,
   closestCenter,
-  DragOverEvent,
 } from "@dnd-kit/core"
 import {
   SortableContext,
@@ -18,7 +16,6 @@ import {
 } from "@dnd-kit/sortable"
 import { useKanbanStore } from "@/lib/kanban-store"
 import { ColumnView } from "./column"
-import { Button } from "@/components/ui/button"
 
 type ActiveData =
   | { type: "column"; columnId: string }
@@ -33,14 +30,6 @@ export function Board() {
 
   function findCardColumn(cardId: string) {
     return columns.find((c) => c.cardIds.includes(cardId))
-  }
-
-  function handleDragStart(_event: DragStartEvent) {
-    // No-op here; we attach needed metadata via useSortable data props on items
-  }
-
-  function handleDragOver(_event: DragOverEvent) {
-    // Optional: could implement preview logic; skipping for simplicity
   }
 
   function handleDragEnd(event: DragEndEvent) {
@@ -90,9 +79,7 @@ export function Board() {
       <DndContext
         sensors={sensors}
         collisionDetection={closestCenter}
-        onDragStart={handleDragStart}
         onDragEnd={handleDragEnd}
-        onDragOver={handleDragOver}
       >
         <SortableContext
           // Column ids for horizontal sorting
