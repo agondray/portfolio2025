@@ -6,7 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Github, Linkedin, Mail, ExternalLink, Code2, Monitor, Zap } from 'lucide-react';
 import Image from "next/image"
 import Link from "next/link";
-import { GITHUB_URL, LINKEDIN_URL, MY_EMAIL, projectData } from '@/lib/constants';
+import { GITHUB_URL, LINKEDIN_URL, MY_EMAIL, projectData, pastWorkplaces } from '@/lib/constants';
 import TopNav from '@/components/main/topnav';
 import Footer from '@/components/main/footer';
 
@@ -200,8 +200,44 @@ export default function Portfolio() {
         </div>
       </section>
 
-      <section id="contact" className="py-20 bg-muted/50">
+      <section id="past-works" className="py-20 bg-muted/50">
         <div className="px-0 mx-[5%] md:mx-auto max-w-4xl text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Past Works and Employers</h2>
+          <ul>
+            {pastWorkplaces.map((company) => {
+              const {
+                name,
+                roleTitle,
+                roleType,
+                startDate,
+                endDate,
+                logoUrl,
+                linkedInUrl,
+              } = company
+
+              const getMonth = (date) => date.toLocaleString('en-US', { month: 'long' })
+              const getYear = (date) => date.getUTCFullYear(date)
+
+              const startMonth = getMonth(startDate)
+              const endMonth = getMonth(endDate)
+              const startYear = getYear(startDate)
+              const endYear = getYear(endDate)
+
+              return (
+                <div>
+                  <span>
+                    {name}: {`${startMonth}, ${startYear}`} - {`${endMonth}, ${endYear}`}
+                  </span>
+                </div>
+              )
+            })}
+          </ul>
+        </div>
+      </section>
+
+
+      <section id="projects" className="py-20 px-0 mx-[5%] md:mx-auto">
+        <div className="container mx-auto max-w-6xl">
           <h2 className="text-3xl md:text-4xl font-bold mb-8">Ready to build something amazing?</h2>
           <p className="text-lg text-foreground mb-12">
             I&apos;m currently available for full-time opportunities, contracts, and freelance projects. Let&apos;s connect and discuss how I can help bring your software ideas to life.
@@ -222,7 +258,6 @@ export default function Portfolio() {
           </div>
         </div>
       </section>
-
       <Footer />
     </div>
   )

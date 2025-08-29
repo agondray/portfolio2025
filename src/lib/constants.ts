@@ -25,4 +25,44 @@ export const projectData = [
   // Video Library With Custom Video Player
   // 2D Top-Down Turn-Based RPG via Canvas
   // 3D Model-To-Print From The Browser
+  // Blog API specification with frontend views and request testing
 ];
+
+export const pastWorkplaces = [
+  {
+    name: 'Medidata Solutions',
+    roleTitle: 'Senior Applications Engineer',
+    roleType: 'Full-time',
+    startDate: new Date('June, 2020'),
+    endDate: new Date('May, 2024'),
+    logoUrl: '/work_logo_medidata.jfif',
+    linkedInUrl: 'https://www.linkedin.com/company/medidata-solutions',
+  },
+  {
+    name: 'Gantri',
+    roleTitle: 'Software Engineer',
+    roleType: 'Full-time',
+    startDate: new Date('June, 2019'),
+    endDate: new Date('January, 2020'),
+    logoUrl: '/work_logo_gantri.jfif',
+    linkedInUrl: 'https://www.linkedin.com/company/gantri',
+  },
+  {
+    name: 'CoverHound',
+    roleTitle: 'Software Engineer',
+    roleType: 'Full-time',
+    startDate: new Date('April, 2017'),
+    endDate: new Date('June, 2019'),
+    logoUrl: '/work_logo_ch.jfif',
+    linkedInUrl: 'https://www.linkedin.com/company/coverhound-inc-/',
+  },
+  {
+    name: 'KoreFabrik Inc.',
+    roleTitle: 'Software Engineer',
+    roleType: 'Full-time',
+    startDate: new Date('April, 2016'),
+    endDate: new Date('February, 2017'),
+    logoUrl: '/work_logo_kfk.jfif',
+    linkedInUrl: 'https://www.linkedin.com/company/coverhound-inc-/',
+  },
+]
