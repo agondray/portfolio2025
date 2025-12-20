@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge";
 import { GITHUB_URL, LINKEDIN_URL, MY_EMAIL, projectData, pastWorkplaces } from '@/lib/constants';
+import { getMonth, getYear } from '@/lib/helpers';
 import TopNav from '@/components/main/topnav';
 import Footer from '@/components/main/footer';
 
@@ -215,9 +216,6 @@ export default function Portfolio() {
                 linkedInUrl,
               } = company
 
-              const getMonth = (date) => date.toLocaleString('en-US', { month: 'long' })
-              const getYear = (date) => date.getUTCFullYear()
-
               const startMonth = getMonth(startDate)
               const startYear = getYear(startDate)
               const endDateStr = typeof endDate === 'string'
@@ -233,10 +231,12 @@ export default function Portfolio() {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <img
+                      <Image
                         src={logoUrl}
                         alt={`company_thumb_${name}`}
                         className="min-w-[75px]"
+                        width={75}
+                        height={75}
                       />
                     </Link>
                     <div className="ml-5 text-left">
