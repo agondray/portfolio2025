@@ -1,12 +1,12 @@
 "use client"
 
+import Image from 'next/image'
+import Link from "next/link";
+import { Github, Linkedin, Mail, ExternalLink, Code2, Monitor, Zap } from 'lucide-react';
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge";
-import { Github, Linkedin, Mail, ExternalLink, Code2, Monitor, Zap } from 'lucide-react';
-import Image from "next/image"
-import Link from "next/link";
-import { GITHUB_URL, LINKEDIN_URL, MY_EMAIL, projectData } from '@/lib/constants';
+import { GITHUB_URL, LINKEDIN_URL, MY_EMAIL, projectData, pastWorkplaces } from '@/lib/constants';
 import TopNav from '@/components/main/topnav';
 import Footer from '@/components/main/footer';
 
@@ -200,8 +200,62 @@ export default function Portfolio() {
         </div>
       </section>
 
-      <section id="contact" className="py-20 bg-muted/50">
+      <section id="past-works" className="py-20 bg-muted/50">
         <div className="px-0 mx-[5%] md:mx-auto max-w-4xl text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Past Works and Employers</h2>
+          <ul className="px-[5%]">
+            {pastWorkplaces.map((company) => {
+              const {
+                name,
+                roleTitle,
+                roleType,
+                startDate,
+                endDate,
+                logoUrl,
+                linkedInUrl,
+              } = company
+
+              const getMonth = (date) => date.toLocaleString('en-US', { month: 'long' })
+              const getYear = (date) => date.getUTCFullYear()
+
+              const startMonth = getMonth(startDate)
+              const startYear = getYear(startDate)
+              const endDateStr = typeof endDate === 'string'
+                ? endDate
+                : `${getMonth(endDate)}, ${getYear(endDate)}`
+
+              return (
+                <div key={name} className="text-md text-foreground mb-10 mx-auto mb-5 max-w-xs">
+                  <div className="flex justify-left items-start">
+                    <Link
+                      className="block pt-[5px] w-[75px] h-[75px]"
+                      href={linkedInUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <img
+                        src={logoUrl}
+                        alt={`company_thumb_${name}`}
+                        className="min-w-[75px]"
+                      />
+                    </Link>
+                    <div className="ml-5 text-left">
+                      <Link className="underline color-inherit" href={linkedInUrl} target="_blank" rel="noopener noreferrer">
+                          <b>{name}</b>
+                      </Link>
+                      <p>{roleTitle}, {roleType}</p>
+                      <p>{`${startMonth}, ${startYear}`} - {endDateStr}</p>
+                    </div>
+                  </div>
+                </div>
+              )
+            })}
+          </ul>
+        </div>
+      </section>
+
+      <section id="projects" className="py-20 px-0 mx-[5%] md:mx-auto">
+        <div className="container mx-auto max-w-6xl">
           <h2 className="text-3xl md:text-4xl font-bold mb-8">Ready to build something amazing?</h2>
           <p className="text-lg text-foreground mb-12">
             I&apos;m currently available for full-time opportunities, contracts, and freelance projects. Let&apos;s connect and discuss how I can help bring your software ideas to life.
@@ -222,7 +276,6 @@ export default function Portfolio() {
           </div>
         </div>
       </section>
-
       <Footer />
     </div>
   )
